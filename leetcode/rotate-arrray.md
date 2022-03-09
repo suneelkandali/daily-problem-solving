@@ -33,9 +33,10 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 **Solution**
 ```js
-const rotate = (nums, k) =>(
+const rotate = (nums, k) => {
+    k = (k > nums.length) ? k % nums.length : k;
     nums.unshift(...nums.splice(nums.length - k))
-);
+};
 ```
 
 **Reference:**
